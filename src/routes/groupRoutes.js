@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const auth = require('../middleware/auth');
+const groupCtrl = require('../controllers/groupController');
+router.post('/', auth, groupCtrl.createGroupValidation, groupCtrl.createGroup);
+router.delete('/:groupId', auth, groupCtrl.deleteGroup);
+router.post('/:groupId/invite', auth, groupCtrl.invite);
+router.post('/:groupId/join', auth, groupCtrl.join);
+router.get('/user/:userId', auth, groupCtrl.listUserGroups);
+module.exports = router;
