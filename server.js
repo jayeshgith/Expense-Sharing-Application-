@@ -20,10 +20,10 @@ app.use('/api/groups', groupRoutes);
 app.use('/api/groups', expenseRoutes);
 app.use('/api/groups', settlementRoutes);
 
-// Health
+
 app.get('/', (req, res) => res.json({ ok: true, message: 'Expense Sharing Backend' }));
 
-// Error handler
+
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
